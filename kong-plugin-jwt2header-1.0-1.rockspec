@@ -1,12 +1,12 @@
-package = "kong-log-google"
+package = "kong-jwt2header"
 version = "1.0-1"
 
 source = {
-  url = "git://github.com/yesinteractive/kong-log-google.git"
+  url = "git://github.com/yesinteractive/kong-jwt2header.git"
 }
 
 description = {
-  summary = "Logs Kong gatway transactions to Google Analytics",
+  summary = "Converts JWT claims to Headers to allow for Routing by JWT Claim and/or upstream JWT Claim consumption by header",
   license = "MIT"
 }
 
