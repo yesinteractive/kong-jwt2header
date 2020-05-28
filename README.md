@@ -25,10 +25,10 @@ $ luarocks install kong-jwt2header
 
 ## Configuration
 
-You can add the plugin on a service by executing the following request against the Kong admin API (plugins can also be applied to a route, consumer, globally, etc.):
+Since this plugin has elements that must run in the Rewrite execution phase, this plugin can only be configured to run globally in a kong workspace or cluster.
 
 <pre>
-$ curl -X POST http://kong:8001/services/SERVICE_NAME_OR_ID/plugins \
+$ curl -X POST http://kong:8001/plugins \
     --data "name=jwt2header" \
     --data "config.strip_claims=false" \
     --data "config.token_required=true"
