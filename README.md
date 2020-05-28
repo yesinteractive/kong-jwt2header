@@ -1,4 +1,5 @@
 # Kong Plugin: JWT To Header (Route by JWT Claim)
+![alt text](https://github.com/yesinteractive/kong-jwt2header/blob/master/banner-jwt2header.png "Kong Jwt2header plugin")
 
 This Kong Plugin can be used to route requests by JWT claim. It does this by converting JWT claims to headers during rewrite phase so 
 that Kong's route by header functionality can be used to route the request appropriately. Alternatively, the plugin can be used to 
