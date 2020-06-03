@@ -2,7 +2,7 @@ local typedefs = require "kong.db.schema.typedefs"
 
 
 return {
-  name = "jwt-to-header",
+  name = "kong-jwt2header",
   fields = {
     {
       route = typedefs.no_route,
