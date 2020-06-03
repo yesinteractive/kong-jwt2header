@@ -9,7 +9,7 @@ simply convert JWT claims to headers that can be consumed by the upstream servic
 
 ### Manual
 
-To manually install plugin, create directory called `/usr/local/share/lua/5.1/kong/plugins/jwt2header` on Kong node and copy contents of `/plugins` directory there.
+To manually install plugin, create directory called `/usr/local/share/lua/5.1/kong/plugins/kong-jwt2header` on Kong node and copy contents of `/plugins` directory there.
 
 Restart Kong and you're ready to go.
 
