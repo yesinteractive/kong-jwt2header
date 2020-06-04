@@ -1,5 +1,5 @@
 package = "kong-jwt2header"
-version = "1.0-1"
+version = "1.0-2"
 
 source = {
   url = "git://github.com/yesinteractive/kong-jwt2header.git"
@@ -17,7 +17,7 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["kong.plugins.jwt2header.handler"] = "plugin/handler.lua",
-    ["kong.plugins.jwt2header.schema"] = "plugin/schema.lua",
+    ["kong.plugins.kong-jwt2header.handler"] = "plugin/handler.lua",
+    ["kong.plugins.kong-jwt2header.schema"] = "plugin/schema.lua",
   }
 }
