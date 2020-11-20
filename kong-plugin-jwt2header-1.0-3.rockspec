@@ -1,5 +1,5 @@
 package = "kong-jwt2header"
-version = "1.0-2"
+version = "1.0-3"
 
 source = {
   url = "git://github.com/yesinteractive/kong-jwt2header.git"
