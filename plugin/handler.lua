@@ -1,11 +1,11 @@
 -- dynamic routing based on JWT Claim
 
-local jwt = require "kong.openid-connect.jwt"
-local jws = require "kong.openid-connect.jws"
 local sub = string.sub
 local type = type
 local pairs = pairs
 local lower = string.lower
+
+local jwt_decoder = require "kong.plugins.jwt.jwt_parser"
 
 
 local JWT2Header = {
@@ -18,17 +18,21 @@ function JWT2Header:rewrite(conf)
    kong.service.request.set_header("X-Kong-JWT-Kong-Proceed", "no")
   kong.log.debug(kong.request.get_header("Authorization") )
    local claims = nil
+  local header = nil
    if kong.request.get_header("Authorization") ~= nil then kong.log.debug(kong.request.get_header("Authorization") )
     if  string.match(lower(kong.request.get_header("Authorization")), 'bearer') ~= nil then kong.log.debug("2" ..   kong.request.get_path() )
-      if jwt.type(sub(kong.request.get_header("Authorization"), 8)) == "JWS" then  kong.log.debug("3" )
-        if type(jws.decode(sub(kong.request.get_header("Authorization"), 8), { verify_signature = false })) == "table" then  kong.log.debug("4" .. kong.request.get_path() )
-          -- token = 
-           claims = jws.decode(sub(kong.request.get_header("Authorization"), 8), { verify_signature = false }).payload
+            local jwt, err = jwt_decoder:new((sub(kong.request.get_header("Authorization"), 8)))
+                if err then
+              return false, { status = 401, message = "Bad token; " .. tostring(err) }
+            end
+
+            claims = jwt.claims
+            header = jwt.header
            kong.service.request.set_header("X-Kong-JWT-Kong-Proceed", "yes")
-        end
-      end
     end
   end
+  
+
 
   if kong.request.get_header("X-Kong-JWT-Kong-Proceed") == "yes" then
     for claim, value in pairs(claims) do
