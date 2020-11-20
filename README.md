@@ -14,13 +14,9 @@ plugin is executed.
 
 ### Manual
 
-<<<<<<< HEAD
 1. To manually install plugin, create directory called `/usr/local/share/lua/5.1/kong/plugins/jwt2header` on Kong node and copy contents of `/plugins` directory there.
 2. Update your KONG_PLUGINS environment variable or configuration to include `jwt2header`
 3. Restart Kong and you're ready to go.
-=======
-To manually install plugin, create directory called `/usr/local/share/lua/5.1/kong/plugins/kong-jwt2header` on Kong node and copy contents of `/plugins` directory there.
->>>>>>> 32a8631026d960c86f704b1ea1af7b3ab9faba0d
 
 If you are using Docker, a helpful script is included to help deploy the plugin to a Docker container and reload Kong with proper env variables.
 
@@ -40,7 +36,7 @@ Since this plugin has elements that must run in the Rewrite execution phase, thi
 
 <pre>
 $ curl -X POST http://kong:8001/plugins \
-    --data "name=kong-jwt2header" \
+    --data "name=jwt2header" \
     --data "config.strip_claims=false" \
     --data "config.token_required=true"
 </pre>
