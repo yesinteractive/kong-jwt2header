@@ -29,7 +29,7 @@ $ apk add --no-cache git
 $ luarocks install kong-jwt2header
 </pre>
 
-Once installed, besure to inclue `kong-jwt2header` in your KONG_PLUGINS environment variable and reload Kong.
+Once installed, besure to include `kong-jwt2header` in your KONG_PLUGINS environment variable and reload Kong. 
 
 
 ## Configuration
