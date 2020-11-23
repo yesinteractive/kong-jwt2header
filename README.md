@@ -7,8 +7,7 @@ This Kong Plugin can be used to route requests by JWT claim. It does this by con
 that Kong's route by header functionality can be used to route the request appropriately. Alternatively, the plugin can be used to 
 simply convert JWT claims to headers that can be consumed by the upstream service. 
 
-Please note that this plugin does NOT validate JWT tokens. You will still need to use the proper Kong auth plugin (JWT, OIDC, etc.) to do so. This plugin will execute after any authentication
-plugin is executed.
+Please note that this plugin does NOT validate JWT tokens. You will still need to use the proper Kong auth plugin (JWT, OIDC, etc.) to do so. 
 
 ## Installation
 
