@@ -37,7 +37,7 @@ Since this plugin has elements that must run in the Rewrite execution phase, thi
 
 <pre>
 $ curl -X POST http://kong:8001/plugins \
-    --data "name=jwt2header" \
+    --data "name=kong-jwt2header" \
     --data "config.strip_claims=false" \
     --data "config.token_required=true"
 </pre>
